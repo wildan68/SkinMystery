@@ -106,6 +106,7 @@ export default {
 
         .search_box {
             width: 100%;
+            height: 36px;
             position: relative;
             display: flex;
             align-items: center;

@@ -1,11 +1,19 @@
 // SVG NAVBAR ICONS
-import icCart from '../assets/svg/cart.svg'
-import icEmail from '../assets/svg/email.svg'
-import icFaq from '../assets/svg/faq.svg'
-import icNotif from '../assets/svg/notif.svg'
-import icSearch from '../assets/svg/search.svg'
-import icOffice from '../assets/svg/office.svg'
-import icPhone from '../assets/svg/phone.svg'
-import icSubtract from '../assets/svg/subtract.svg'
+import icCart from '../assets/svg/navbar_icons/cart.svg'
+import icEmail from '../assets/svg/navbar_icons/email.svg'
+import icFaq from '../assets/svg/navbar_icons/faq.svg'
+import icNotif from '../assets/svg/navbar_icons/notif.svg'
+import icSearch from '../assets/svg/navbar_icons/search.svg'
+import icOffice from '../assets/svg/navbar_icons/office.svg'
+import icPhone from '../assets/svg/navbar_icons/phone.svg'
+import icSubtract from '../assets/svg/navbar_icons/subtract.svg'
 
 export { icCart, icEmail, icFaq, icNotif, icSearch, icOffice, icPhone, icSubtract }
+
+// PRODUCT ITEMS ICONS
+
+import icStar from '../assets/svg/products_item_icons/star.svg'
+import icMap from '../assets/svg/products_item_icons/map.svg'
+import icCartProduct from '../assets/svg/products_item_icons/cart.svg'
+
+export { icStar, icMap, icCartProduct }
