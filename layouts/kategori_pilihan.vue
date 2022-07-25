@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <AdsBanner img="/png/watsons_banner.png" />
+    <AdsBanner img="/png/watsons_banner.png" class="ml-[104px] mr-[104px]"/>
 </div>
 </template>
 

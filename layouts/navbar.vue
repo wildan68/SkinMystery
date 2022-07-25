@@ -1,6 +1,6 @@
 <template>
-<div class="navbar">
-    <div class="sub_header">
+<div class="navbar" ref="navbar">
+    <div class="sub_header flex" ref="subHeader">
         <div class="flex-1 flex gap-[8px] items-center">
             <ic-phone></ic-phone> Download Skin Mystery App
         </div>
@@ -29,14 +29,17 @@
                 <ic-search class="ic_search"></ic-search>
             </div>
         </div>
-        <div class="flex gap-[24px]">
+        <div class="flex gap-[24px] relative">
             <div class="flex gap-[16px]">
                 <ic-notif></ic-notif>
                 <ic-cart></ic-cart>
                 <ic-subtract></ic-subtract>
             </div>
+            <div v-if="profile" class="absolute h-[295px] top-[150%] right-0 left-0 bg-white shadow-lg rounded-[16px] p-[24px]" ref="profile">
+                TEST
+            </div>
             <div class="user">
-                <div class="profile flex gap-[8px]">
+                <div @click.prevent="showProfile" class="profile flex gap-[8px] hover:bg-[#F8F3F1] hover:text-[#B54B0F] px-[8px] py-[6px] rounded-[8px]">
                     <div class="overflow-hidden w-[24px] h-[24px] rounded-full">
                         <img src="@/assets/png/person1.png" class="w-full h-full object-cover" alt="" />
                     </div>
@@ -68,6 +71,11 @@ import {
 } from '../plugins/icons'
 
 export default {
+    data() {
+        return {
+            profile: false,
+        }
+    },
     components: {
         icCart,
         icPhone,
@@ -78,17 +86,40 @@ export default {
         icNotif,
         icSubtract,
     },
+    methods: {
+        showProfile() {
+            this.profile = !this.profile
+            this.$root.$emit('showProfile')
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                this.$refs.subHeader.classList.add('hidden')
+                this.$refs.subHeader.classList.remove('flex')
+                this.$refs.navbar.classList.add('shadow-lg')
+            } else {
+                this.$refs.subHeader.classList.remove('hidden')
+                this.$refs.subHeader.classList.add('flex')
+                this.$refs.navbar.classList.remove('shadow-lg')
+            }
+        })
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 .navbar {
     background-color: #FBFBFB;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
 
     .sub_header {
         height: 48px;
         color: #616161;
-        display: flex;
         align-items: center;
         padding: 0 32px 0 23px;
         font-size: 16px;
@@ -131,21 +162,23 @@ export default {
             display: flex;
             gap: 40px;
             font-weight: 500;
+            align-items: center;
 
             .profile {
                 position: relative;
             }
+
             .profile::before {
-            content: '';
-            display: block;
-            width: 2px;
-            height: 100%;
-            background-color: #EEEEEE;
-            position: absolute;
-            right: -20px;
+                content: '';
+                display: block;
+                width: 2px;
+                height: 100%;
+                background-color: #EEEEEE;
+                position: absolute;
+                right: -20px;
+            }
         }
-        }
-        
+
     }
 }
 </style>

@@ -1,9 +1,13 @@
 <template>
   <div class="mainapp">
     <Navbar/>
+    <div v-if="profile" class="fixed left-0 top-0 right-0 bottom-0 bg-black/50 z-[15]"></div>
     <Banner/>
     <KategoriPilihan/>
     <Terlaris/>
+    <Populer/>
+    <Promo/>
+    <Products/>
   </div>
 </template>
 
@@ -13,13 +17,29 @@ import Navbar from '@/layouts/navbar'
 import Banner from '@/layouts/banner'
 import KategoriPilihan from '@/layouts/kategori_pilihan'
 import Terlaris from '@/layouts/terlaris'
+import Populer from '@/layouts/populer'
+import Promo from '@/layouts/promo'
+import Products from '@/layouts/products'
 
 export default {
+  data () {
+    return {
+      profile: false,
+    }
+  },
   components: {
     Navbar,
     Banner,
     KategoriPilihan,
     Terlaris,
+    Populer,
+    Promo,
+    Products,
+  },
+  mounted () {
+    this.$root.$on('showProfile', () => {
+      this.profile = !this.profile
+    })
   }
 }
 </script>
