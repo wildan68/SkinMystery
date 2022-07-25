@@ -34,8 +34,10 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '~/plugins/swiper.js', ssr: false },
-        { src: '~/plugins/system.js', ssr: false },
+        { src: '~/plugins/system.js' },
         { src: '~/plugins/skeleton.js', ssr: false },
+        { src: '~/plugins/imageZoom.js', ssr: false },
+        { src: '~/plugins/rating.js', ssr: false },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components

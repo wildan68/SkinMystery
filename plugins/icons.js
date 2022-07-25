@@ -17,3 +17,16 @@ import icMap from '../assets/svg/products_item_icons/map.svg'
 import icCartProduct from '../assets/svg/products_item_icons/cart.svg'
 
 export { icStar, icMap, icCartProduct }
+
+// Profile Menu ICONS
+
+import icProfileDiamond from '../assets/svg/profile_menu_icons/diamond.svg'
+import icProfileBook from '../assets/svg/profile_menu_icons/book.svg'
+import icProfileGear from '../assets/svg/profile_menu_icons/gear.svg'
+import icProfileLogout from '../assets/svg/profile_menu_icons/logout.svg'
+import icProfilePesananDikemas from '../assets/svg/profile_menu_icons/pesanan_dikemas.svg'
+import icProfileReview from '../assets/svg/profile_menu_icons/review.svg'
+import icProfileStore from '../assets/svg/profile_menu_icons/store.svg'
+import icProfileVoucher from '../assets/svg/profile_menu_icons/voucher.svg'
+
+export { icProfileDiamond, icProfileBook, icProfileGear, icProfileLogout, icProfilePesananDikemas, icProfileReview, icProfileStore, icProfileVoucher }

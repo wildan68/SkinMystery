@@ -35,16 +35,16 @@
                 <ic-cart></ic-cart>
                 <ic-subtract></ic-subtract>
             </div>
-            <div v-if="profile" class="absolute h-[295px] top-[150%] right-0 left-0 bg-white shadow-lg rounded-[16px] p-[24px]" ref="profile">
-                TEST
+            <div v-if="profile" class="absolute h-auto top-[150%] right-[-20px] left-[-20px] bg-white shadow-lg rounded-[16px] p-[24px]" ref="profile">
+                <profile-menu></profile-menu>
             </div>
             <div class="user">
-                <div @click.prevent="showProfile" class="profile flex gap-[8px] hover:bg-[#F8F3F1] hover:text-[#B54B0F] px-[8px] py-[6px] rounded-[8px]">
+                <button @click.prevent="showProfile" class="profile flex gap-[8px] hover:bg-[#F8F3F1] hover:text-[#B54B0F] px-[8px] py-[6px] rounded-[8px]">
                     <div class="overflow-hidden w-[24px] h-[24px] rounded-full">
                         <img src="@/assets/png/person1.png" class="w-full h-full object-cover" alt="" />
                     </div>
                     <span class="text-[16px]">Annas Aisya</span>
-                </div>
+                </button>
                 <div class="flex gap-[8px]">
                     <div class="overflow-hidden w-[24px] h-[24px]">
                         <img src="@/assets/png/store1.png" class="w-full h-full object-cover" alt="" />
@@ -70,6 +70,8 @@ import {
     icSubtract,
 } from '../plugins/icons'
 
+import ProfileMenu from '../components/profile_menu'
+
 export default {
     data() {
         return {
@@ -85,11 +87,12 @@ export default {
         icSearch,
         icNotif,
         icSubtract,
+        ProfileMenu,
     },
     methods: {
         showProfile() {
             this.profile = !this.profile
-            this.$root.$emit('showProfile')
+            this.$system.overlay = !this.$system.overlay
         }
     },
     mounted() {

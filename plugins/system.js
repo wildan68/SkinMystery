@@ -2,7 +2,8 @@ import Vue from 'vue'
 
 export default ({ app }, inject) => {
     inject('system', Vue.observable({
-
+        // state
+        overlay: false,
         // methods 
         // ubah angka ke rupiah
         toRupiah(angka) {

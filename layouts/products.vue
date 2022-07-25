@@ -52,7 +52,7 @@
                     </span>
                 </div>
             </div>
-            <button class="absolute bottom-[8px] text-white gap-[3px]">
+            <button class="absolute bottom-[8px] text-white gap-[3px]" @click.prevent="$router.push('/products/single')">
                 <ic-cart-product></ic-cart-product>
                 Kantongin
             </button>
