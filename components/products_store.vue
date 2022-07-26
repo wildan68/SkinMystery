@@ -20,7 +20,7 @@
                 </button>
             </div>
         </div>
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap justify-between">
             <div class="flex gap-[4px] items-center">
                 <ic-star></ic-star>
                 <span class="font-[600]">4.5</span>
