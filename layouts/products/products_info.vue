@@ -3,7 +3,7 @@
     <Breadcrumbs :data="breadcrumbs" />
 
     <div class="flex mt-[24px] gap-[56px] justify-center">
-        <div class="flex flex-col gap-[23px]">
+        <div class="flex-1 flex flex-col gap-[23px] items-end">
             <div class="w-[348px] h-[348px] overflow-hidden rounded-[8px] relative">
                 <zoom-on-hover :img-normal="imageListSelected.img" class="w-full h-full object-cover cursor-crosshair" :scale="2.5"></zoom-on-hover>
                 <div class="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center" v-if="imageListSelected.type === 'video'">
@@ -69,7 +69,7 @@
                     </span>
                 </div>
             </div>
-            <Category :data="[{name: 'Kulit berjerawat'}, {name: 'Flek hitam'}, {name: 'Dark spot'}]"/>
+            <Category :data="[{name: 'Kulit berjerawat'}, {name: 'Flek hitam'}, {name: 'Dark spot'}]" />
             <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
             <div class="flex flex-col gap-[8px]">
                 <div class="flex gap-[8px] items-center">
@@ -78,16 +78,68 @@
                     </span>
                     <ic-info></ic-info>
                 </div>
-                <ProductSafe :data="productSafe"/>
+                <ProductSafe :data="productSafe" />
             </div>
             <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
-            <ProductMenu/>
+            <ProductMenu />
             <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
-            <ProductStore/>
+            <ProductStore />
             <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
+            <div class="flex flex-col gap-[8px]">
+                <span class="font-[600] text-[16px]">
+                    Voucher Toko
+                </span>
+                <ProductVoucherStore />
+            </div>
+            <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
+            <div class="flex flex-col gap-[12px] px-[24px] py-[16px] bg-[#F1F6E7] rounded-[12px]">
+                <span class="font-[600] text-[16px]">
+                    Beli di aplikasi, makin banyak promo!
+                </span>
+                <div class="flex gap-[16px]">
+                    <div class="flex gap-[12px] items-center">
+                        <ic-mobile-phone></ic-mobile-phone>
+                        <span>Scan QR-nya untuk lihat barang ini di aplikasi Skin Mystery. Bebas ongkir, lho~</span>
+                    </div>
+                    <div class="flex">
+                        <button class="w-[100px] h-[34px] rounded-[8px] font-[600] border border-[#C2C2C2] text-[#404040] gap-[8px] px-[12px] py-[9px] text-[12px]">
+                            <ic-scan></ic-scan>
+                            Scan QR
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class=" border-b-2 border-[#EDEDED] my-[8px]"></div>
+            <div class="flex justify-between mb-[48px]">
+                <span class="text-[12px] text-[#757575]">
+                    Ada masalah dengan produk ini?
+                </span>
+                <div class="flex gap-[4px] text-[12px] font-[600]">
+                    <ic-report></ic-report>
+                    Laporkan
+                </div>
+            </div>
         </div>
-        <div class="w-[250px]">
-            Flex 1
+        <div class="flex-1 border border-[#E0E0E0] rounded-[12px] p-[16px]">
+            <span class="font-[600] text-[16px] text-[#0A0A0A]">
+                Aroma
+            </span>
+            <ProductVariant :data="[{
+                name: 'Lavender',
+                img: '/png/variant1.png',
+            }, {
+                name: 'Jeruk',
+                img: '/png/variant2.png',
+            }, {
+                name: 'Blackberry',
+                img: '/png/variant3.png',
+            }, {
+                name: 'Vanila',
+                img: '/png/variant4.png',
+            }, {
+                name: 'Kopi',
+                img: '/png/variant5.png',
+            }]" class="mt-[12px]"/>
         </div>
     </div>
 </div>
@@ -99,9 +151,15 @@ import Category from '../../components/products_category'
 import ProductSafe from '../../components/products_safe'
 import ProductMenu from '../../components/products_menu'
 import ProductStore from '../../components/products_store'
+import ProductVoucherStore from '../../components/products_voucher_store'
+import ProductVariant from '../../components/products_variant'
 
-
-import { icInfo} from '../../plugins/products_detail_icons'
+import {
+    icInfo,
+    icMobilePhone,
+    icScan,
+    icReport,
+} from '../../plugins/products_detail_icons'
 
 export default {
     data() {
@@ -189,7 +247,12 @@ export default {
         ProductSafe,
         ProductMenu,
         ProductStore,
+        ProductVoucherStore,
+        ProductVariant,
         icInfo,
+        icMobilePhone,
+        icScan,
+        icReport,
     },
     methods: {
         selectImage(i, img, type) {
