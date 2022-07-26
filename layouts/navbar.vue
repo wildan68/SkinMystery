@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="header">
-        <div class="flex">
+        <div class="flex cursor-pointer" @click.prevent="$system.to('/')">
             <img src="@/assets/png/logo.png" alt="" />
         </div>
         <div class="flex gap-[25px] flex-1">
@@ -35,7 +35,7 @@
                 <ic-cart></ic-cart>
                 <ic-subtract></ic-subtract>
             </div>
-            <div v-if="profile" class="absolute h-auto top-[150%] right-[-20px] left-[-20px] bg-white shadow-lg rounded-[16px] p-[24px]" ref="profile">
+            <div v-if="$system.profileMenu" class="absolute h-auto top-[150%] right-[-20px] left-[-20px] bg-white shadow-lg rounded-[16px] p-[24px]" ref="profile">
                 <profile-menu></profile-menu>
             </div>
             <div class="user">
@@ -75,7 +75,7 @@ import ProfileMenu from '../components/profile_menu'
 export default {
     data() {
         return {
-            profile: false,
+            
         }
     },
     components: {
@@ -91,7 +91,7 @@ export default {
     },
     methods: {
         showProfile() {
-            this.profile = !this.profile
+            this.$system.profileMenu = !this.$system.profileMenu
             this.$system.overlay = !this.$system.overlay
         }
     },
@@ -101,10 +101,12 @@ export default {
                 this.$refs.subHeader.classList.add('hidden')
                 this.$refs.subHeader.classList.remove('flex')
                 this.$refs.navbar.classList.add('shadow-lg')
+                this.$refs.navbar.classList.add('animation')
             } else {
                 this.$refs.subHeader.classList.remove('hidden')
                 this.$refs.subHeader.classList.add('flex')
                 this.$refs.navbar.classList.remove('shadow-lg')
+                this.$refs.navbar.classList.remove('animation')
             }
         })
     }
@@ -119,6 +121,19 @@ export default {
     left: 0;
     right: 0;
     z-index: 20;
+
+    &.animation {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 
     .sub_header {
         height: 48px;

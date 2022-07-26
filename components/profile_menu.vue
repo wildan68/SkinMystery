@@ -6,7 +6,7 @@
                 <img src="@/assets/png/person1.png" class="w-full h-full object-cover" alt="" />
             </div>
         </div>
-        <div class="flex-1 flex flex-col gap-[8px]">
+        <div @click.prevent="$system.to('/profile')" class="flex-1 flex flex-col gap-[8px] cursor-pointer">
             <span class="font-[600]">aaisyawldr</span>
             <div class="flex">
                 <div class="bg-[#3386FF] bg-opacity-10 px-[8px] py-[4px] rounded-[8px] flex gap-[4px]">

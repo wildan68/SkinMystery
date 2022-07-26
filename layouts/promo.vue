@@ -81,7 +81,7 @@ export default {
     .promo_list {
         display: grid;
         /* grid auto coloumns auto width */
-        grid-template-columns: repeat(auto-fit, minmax(143px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
 </style>

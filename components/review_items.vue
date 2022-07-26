@@ -9,7 +9,7 @@
         <div class="flex-1 flex flex-col gap-[6px]">
             <span class="text-[12px] font-[600]">{{ dataReview.name }}</span>
             <div class="flex">
-                <ic-star v-for="i in dataReview.rating" :key="i" :star="i"></ic-star>
+                <ic-star v-for="i in dataReview.rating" :key="i"></ic-star>
                 <ic-star-gray v-for="i in (5 - dataReview.rating)" :key="i"></ic-star-gray>
             </div>
             <span class="text-[12px] text-[#757575]">{{ dataReview.date }} | Variasi: {{ dataReview.variant }}</span>
@@ -22,7 +22,10 @@
     </div>
     <div class="flex flex-wrap text-[#363636]">{{ dataReview.text }}</div>
     <div class="flex gap-[8px]" v-if="dataReview.media">
-        <div class="w-[72px] h-[72px] rounded-[8px] overflow-hidden" v-for="(dataMedia, i) in dataReview.media" :key="i">
+        <div class="w-[72px] h-[72px] rounded-[8px] overflow-hidden relative" v-for="(dataMedia, i) in dataReview.media" :key="i">
+            <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center" v-if="dataMedia.type === 'video'">
+                <img src="@/assets/png/play_icon.png" />
+            </div>
             <img :src="dataMedia.img" class="w-full h-full object-cover" />
         </div>
     </div>
@@ -39,7 +42,6 @@ export default {
     props: {
         dataReview: {
             type: Object,
-            required: true
         }
     },
     components: {

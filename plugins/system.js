@@ -4,6 +4,7 @@ export default ({ app }, inject) => {
     inject('system', Vue.observable({
         // state
         overlay: false,
+        profileMenu: false,
         // methods 
         // ubah angka ke rupiah
         toRupiah(angka) {
@@ -20,6 +21,12 @@ export default ({ app }, inject) => {
             } else {
                 return str;
             }
+        },
+        // push router
+        to(path) {
+            app.router.push(path);
+            this.overlay = false;
+            this.profileMenu = false;
         }
     }))
 }
