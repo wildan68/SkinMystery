@@ -1,6 +1,6 @@
 <template>
 <div class="variant">
-    <div class="variant_item" v-for="(d, i) in data" :key="i">
+    <div @click.prevent="selected = i" :class="selected === i ? 'variant_item selected' : 'variant_item'" v-for="(d, i) in data" :key="i">
         <div class="w-[28px] h-[28px] rounded-[4px] overflow-hidden">
             <img :src="d.img" class="w-full h-full object-cover">
         </div>
@@ -10,10 +10,16 @@
 </template>
 
 <script>
+
 export default {
     props: {
         data: Array,
-    }
+    },
+    data() {
+        return {
+            selected: 0,
+        }
+    },
 }
 </script>
 
@@ -31,6 +37,12 @@ export default {
         border: 1px solid #9E9E9E;
         border-radius: 6px;
         color: #363636;
+
+        &.selected {
+            background-color: #B54B0F;
+            color: #fff;
+            border: 1px solid #B54B0F;
+        }
     }
 }
 </style>

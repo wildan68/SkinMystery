@@ -1,7 +1,7 @@
 <template>
 <div class="products">
     <div class="flex relative items-center">
-        <div class="swiper overflow-hidden flex relative items-center" v-swiper:mySwiper="kategoriSlide">
+        <div class="swiper overflow-hidden w-full flex relative items-center" v-swiper:mySwiper="kategoriSlide">
             <div class="swiper-wrapper flex items-center">
                 <div class="swiper-slide kategori_items" v-for="(cat, i) in kategori" :key="i">
                     <div class="absolute bottom-0 top-0 left-0 right-0 overflow-hidden">

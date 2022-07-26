@@ -33,11 +33,11 @@
                 </div>
             </div>
         </div>
-        <div class="flex-1 flex flex-col gap-[8px]">
+        <div class="w-full flex flex-col gap-[8px]">
             <span class="text-[18px] font-[600]">
                 L'Oreal Paris Revitalift Crystal Micro Essence Skin Care
             </span>
-            <div class="flex gap-[8px] w-full justify-between">
+            <div class="flex gap-[8px] w-full">
                 <div class="font-[600] text-[16px] flex gap-[8px] items-center">
                     4.8 <rating :rating="parseFloat(4.5)" :increment="0.5" :max-rating="5" :read-only="true" :star-size="24" :show-rating="false" active-color="#FF8B33"></rating>
                 </div>
@@ -120,26 +120,57 @@
                 </div>
             </div>
         </div>
-        <div class="flex-1 border border-[#E0E0E0] rounded-[12px] p-[16px]">
-            <span class="font-[600] text-[16px] text-[#0A0A0A]">
-                Aroma
-            </span>
-            <ProductVariant :data="[{
+        <div class="flex flex-col">
+            <div class="border border-[#E0E0E0] rounded-[12px] p-[16px]">
+                <span class="font-[600] text-[16px] text-[#0A0A0A]">
+                    Aroma
+                </span>
+
+                <ProductVariant :data="[{
                 name: 'Lavender',
                 img: '/png/variant1.png',
-            }, {
+                }, {
                 name: 'Jeruk',
                 img: '/png/variant2.png',
-            }, {
+                }, {
                 name: 'Blackberry',
                 img: '/png/variant3.png',
-            }, {
+                }, {
                 name: 'Vanila',
                 img: '/png/variant4.png',
-            }, {
+                }, {
                 name: 'Kopi',
                 img: '/png/variant5.png',
-            }]" class="mt-[12px]"/>
+                }]" class="mt-[12px]" />
+
+                <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
+                <span class="font-[600] text-[16px] text-[#0A0A0A]">
+                    Aroma
+                </span>
+                <ProductQuantity :maxQuantity="75" class="mt-[12px]"/>
+                <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
+                <div class="flex justify-between items-center">
+                    <div class="flex-1 text-[#616161]">
+                        Subtotal
+                    </div>
+                    <div class="flex-1 flex flex-col text-[16px] price_text items-end">
+                        <span class="line-through price_text text-[14px] text-[#757575]">Rp289.000</span>
+                        <span>Rp<b class="text-[32px] price_text">289</b>.000</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[8px] w-full">
+                    <button class="h-[40px] gap-[8px] bg-[#B54B0F] text-white rounded-[12px]">
+                        <ic-cart></ic-cart>
+                        Kantongin
+                    </button>
+                    <button class="h-[40px] gap-[8px] border border-[#B54B0F] text-[#B54B0F] rounded-[12px]">
+                        Beli Langsung
+                    </button>
+                </div>
+            </div>
+            <div class="mt-[24px] overflow-hidden w-full h-[101px] rounded-[8px]">
+                <img src="/png/the_body_shop.png" class="w-full h-full object-cover"/>
+            </div>
         </div>
     </div>
 </div>
@@ -153,12 +184,14 @@ import ProductMenu from '../../components/products_menu'
 import ProductStore from '../../components/products_store'
 import ProductVoucherStore from '../../components/products_voucher_store'
 import ProductVariant from '../../components/products_variant'
+import ProductQuantity from '../../components/products_buy_quantity'
 
 import {
     icInfo,
     icMobilePhone,
     icScan,
     icReport,
+    icCart,
 } from '../../plugins/products_detail_icons'
 
 export default {
@@ -249,10 +282,12 @@ export default {
         ProductStore,
         ProductVoucherStore,
         ProductVariant,
+        ProductQuantity,
         icInfo,
         icMobilePhone,
         icScan,
         icReport,
+        icCart,
     },
     methods: {
         selectImage(i, img, type) {

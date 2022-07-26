@@ -10,5 +10,6 @@ import icInfoBlack from '@/assets/svg/products_detail_icons/info_black.svg';
 import icMobilePhone from '@/assets/svg/products_detail_icons/mobile-phone.svg';
 import icScan from '@/assets/svg/products_detail_icons/scan.svg';
 import icReport from '@/assets/svg/products_detail_icons/report.svg';
+import icCart from '@/assets/svg/products_detail_icons/cart.svg';
 
-export { icChecklist, icClose, icInfo, icStar, icMap, icChatActive, icVoucher, icInfoBlack, icMobilePhone, icScan, icReport };
+export { icChecklist, icClose, icInfo, icStar, icMap, icChatActive, icVoucher, icInfoBlack, icMobilePhone, icScan, icReport, icCart };
