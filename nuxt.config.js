@@ -68,7 +68,24 @@ export default {
     // PWA module configuration: https://go.nuxtjs.dev/pwa
     pwa: {
         manifest: {
-            lang: 'en'
+            name: 'SkinMystery App',
+            lang: 'en',
+            useWebmanifestExtension: false
+        },
+        workbox: {
+            runtimeCaching: [{
+                urlPattern: 'https://sm.wildan.host/.*',
+                strategyOptions: {
+                    cacheName: 'our-cache',
+                },
+                strategyPlugins: [{
+                    use: 'Expiration',
+                    config: {
+                        maxEntries: 10,
+                        maxAgeSeconds: 300
+                    }
+                }]
+            }]
         }
     },
 
@@ -79,6 +96,9 @@ export default {
                 tailwindcss: {},
                 autoprefixer: {},
             },
+        },
+        extractCSS: {
+            allChunks: true
         },
     }
 }
