@@ -18,10 +18,10 @@
             </div>
 
             <div class="absolute bottom-[16px] right-[16px] flex gap-[8px]">
-                <button class="btn_navigation swiper-button-prev">
+                <button class="btn_navigation banner-prev">
                     <i class="bi bi-chevron-left"></i>
                 </button>
-                <button class="btn_navigation swiper-button-next">
+                <button class="btn_navigation banner-next">
                     <i class="bi bi-chevron-right"></i>
                 </button>
             </div>
@@ -51,8 +51,8 @@ export default {
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.banner-next',
+                    prevEl: '.banner-prev',
                 },
             },
         }

@@ -1,11 +1,33 @@
 <template>
 <div class="products_review">
     <ProductReviewMedia :mediaItems="mediaItems"/>
+    <ProductUlasan class="mt-[48px]"/>
+    <div class="flex justify-end items-center gap-[6px] mb-[43px]">
+        <button class="btn_page">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="btn_page selected">
+            1
+        </button>
+        <button class="btn_page">
+            2
+        </button>
+        <button class="btn_page">
+            ...
+        </button>
+        <button class="btn_page">
+            10
+        </button>
+        <button class="btn_page">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
 </div>
 </template>
 
 <script>
 import ProductReviewMedia from '@/components/products_review_media'
+import ProductUlasan from '@/components/products_ulasan'
 
 export default {
     data() {
@@ -42,6 +64,7 @@ export default {
     },
     components: {
         ProductReviewMedia,
+        ProductUlasan,
     },
 }
 </script>
@@ -53,5 +76,19 @@ export default {
     gap: 16px;
     padding: 0 104px 0 104px;
     width: 80%;
+
+    .btn_page {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+        background-color: #F8F3F1;
+        color: #B54B0F;
+        font-weight: 600;
+
+        &.selected {
+            background-color: #B54B0F;
+            color: #FFFFFF;
+        }
+    }
 }
 </style>
