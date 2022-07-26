@@ -20,18 +20,18 @@
                 </button>
             </div>
         </div>
-        <div class="flex">
-            <div class="flex-1 flex gap-[4px] items-center">
+        <div class="flex flex-wrap">
+            <div class="flex gap-[4px] items-center">
                 <ic-star></ic-star>
                 <span class="font-[600]">4.5</span>
                 <span class="text-[12px] text-[#757575]">rata-rata ulasan</span>
             </div>
-            <div class="flex-1 flex gap-[4px] items-center">
+            <div class="flex gap-[4px] items-center">
                 <ic-chat-active></ic-chat-active>
                 <span class="font-[600]">69%</span>
                 <span class="text-[12px] text-[#757575]">chat dibalas</span>
             </div>
-            <div class="flex-1 flex gap-[4px] items-center">
+            <div class="flex gap-[4px] items-center">
                 <ic-map></ic-map>
                 <span class="font-[600]">Kota Tangerang</span>
             </div>
