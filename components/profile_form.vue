@@ -10,7 +10,7 @@
             <input type="text" placeholder="Email" value="aaisyawldr@gmail.com" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">
-                    Tervefikasi
+                    Terverifikasi
                 </span>
                 <button class="font-[600] text-[16px] text-[#B54B0F]">
                     Ubah
@@ -24,7 +24,7 @@
             <input type="text" placeholder="No HP" value="081234567890" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">
-                    Tervefikasi
+                    Terverifikasi
                 </span>
                 <button class="font-[600] text-[16px] text-[#B54B0F]">
                     Ubah

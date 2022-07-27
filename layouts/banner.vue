@@ -1,7 +1,7 @@
 <template>
 <div class="banner">
-    <div class="flex gap-[24px] h-[347px]">
-        <div class="w-[817px] h-full rounded-[16px] overflow-hidden relative">
+    <div class="flex w-full lg:w-auto lg:flex-row flex-col lg:gap-[24px] gap-[16px] h-[347px]">
+        <div class="lg:w-[817px] h-full rounded-[16px] overflow-hidden relative">
             <div class="swiper overflow-hidden flex" v-swiper:mySwiper="bannerSlide">
                 <div class="swiper-wrapper flex items-center">
                     <div class="swiper-slide">
@@ -26,7 +26,7 @@
                 </button>
             </div>
         </div>
-        <div class="w-[397px] h-full rounded-[16px] overflow-hidden">
+        <div class="lg:w-[397px] h-full rounded-[16px] overflow-hidden">
             <img src="@/assets/banner/banner2.png" class="w-full h-full object-cover" alt="" />
         </div>
     </div>
@@ -70,6 +70,11 @@ export default {
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 1024px) {
+        height: auto;
+        padding: 24px;
+    }
+
     .btn_navigation {
         border-radius: 8px;
         padding: 4px 10px 4px 10px;
@@ -80,6 +85,11 @@ export default {
         &:hover {
             background-color: #B54B0F;
             color: #FFFFFF;
+        }
+
+        @media (max-width: 1024px) {
+            padding: 3px 8px 3px 8px;
+            font-size: 14px;
         }
     }
 }

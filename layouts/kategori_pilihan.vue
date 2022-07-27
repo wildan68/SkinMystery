@@ -1,20 +1,20 @@
 <template>
 <div class="kategori">
     <div class="kategori_pilihan">
-        <div class="sub_kategori shadow-lg w-[826px]">
+        <div class="sub_kategori shadow-lg lg:w-[826px] w-full">
             <span class="font-[600] text-[24px]">
                 Kategori Pilihan
             </span>
-            <div class="flex justify-between">
+            <div class="flex lg:justify-between flex-wrap">
                 <div class="item_kategori" v-for="(cat, i) in dataKategori" :key="i">
-                    <div class="w-full h-[139px] overflow-hidden rounded-[16px]">
+                    <div class="w-full lg:h-[139px] h-[80px] overflow-hidden rounded-[16px]">
                         <img :src="cat.img" class="w-full h-full object-cover" alt="" />
                     </div>
                     {{ cat.title }}
                 </div>
             </div>
         </div>
-        <div class="sub_kategori shadow-lg w-[383px]">
+        <div class="sub_kategori shadow-lg lg:w-[383px] w-full">
             <span class="font-[600] text-[24px]">
                 Fitur Unggulan
             </span>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <AdsBanner img="/png/watsons_banner.png" class="ml-[104px] mr-[104px]"/>
+    <AdsBanner img="/png/watsons_banner.png" class="ml-[104px] mr-[104px]" />
 </div>
 </template>
 
@@ -71,6 +71,10 @@ export default {
     gap: 24px;
     justify-content: center;
 
+    @media (max-width: 1024px) {
+        padding: 24px;
+    }
+
     .sub_kategori {
         border-radius: 16px;
         padding: 24px;
@@ -87,6 +91,10 @@ export default {
             align-items: center;
             flex-wrap: wrap;
             color: #404040;
+        }
+
+        @media (max-width: 1024px) {
+            width: 80px;
         }
     }
 }
