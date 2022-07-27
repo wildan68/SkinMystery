@@ -1,5 +1,5 @@
 # SkinMystery
-Sebuah Aplikasi Web e-Commerce yang menggunakan Framework NuxtJs, dengan fitur PWA, Responsive Mobile View, dan lain lain
+Sebuah Aplikasi Web e-Commerce yang menggunakan Framework NuxtJs, dengan fitur PWA, Responsive Mobile View, dan lain lain ✨🛒
 
 ## 🔷 Build Setup
 
