@@ -17,17 +17,12 @@ export default ({ app }, inject) => {
         },
         // excerpt nama product
         excerpt(str, len) {
-            if (str.length > len) {
-                return str.substring(0, len) + '...';
-            } else {
-                return str;
-            }
+            return str.length > len ? str.substring(0, len) + '...' : str
         },
         // push router
         to(path) {
             app.router.push(path);
-            this.overlay = false;
-            this.profileMenu = false;
+            this.closeOverlay();
         },
         //close overlay
         closeOverlay() {

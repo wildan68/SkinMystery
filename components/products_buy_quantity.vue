@@ -31,14 +31,10 @@ export default {
     },
     methods: {
         add() {
-            if (this.quantity < this.maxQuantity) {
-                this.quantity++;
-            }
+            if (this.quantity < this.maxQuantity) this.quantity++;
         },
         less() {
-            if (this.quantity > 1) {
-                this.quantity--;
-            }
+            if (this.quantity > 1) this.quantity--;
         }
     }
 }
