@@ -17,7 +17,7 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+Jika Terjadi error saat installasi `npm install`, intall Python 3 terlebih dahulu
 
 ## Special Directories
 
