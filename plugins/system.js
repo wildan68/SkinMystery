@@ -5,6 +5,7 @@ export default ({ app }, inject) => {
         // state
         overlay: false,
         profileMenu: false,
+        popupBuy: false,
         // methods 
         // ubah angka ke rupiah
         toRupiah(angka) {

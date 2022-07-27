@@ -124,7 +124,7 @@
             <button @click.prevent="showPopupBuy" class="bg-[#B54B0F] h-full gap-[10px] w-full text-white rounded-[14px] font-[600]">Beli</button>
         </div>
         <div class="flex flex-col mb-[24px]">
-            <div class="hidden lg:flex flex-col lg:relative fixed bottom-0 left-0 right-0 z-20" ref="popupBuy">
+            <div class="hidden lg:flex flex-col lg:relative fixed bottom-0 left-0 right-0 z-20 lg:z-0" ref="popupBuy">
                 <div class="border border-[#E0E0E0] bg-white rounded-[12px] p-[16px]">
                     <span class="font-[600] text-[16px] text-[#0A0A0A]">
                         Aroma
@@ -305,6 +305,7 @@ export default {
             this.$refs.popupBuy.classList.remove('hidden')
             this.$refs.popupBuy.classList.add('flex')
             this.$system.overlay = true
+            this.$system.popupBuy = true
         },
 
         closeBuy() {
@@ -314,6 +315,7 @@ export default {
                 this.$refs.popupBuy.classList.add('hidden')
                 this.$refs.popupBuy.classList.remove('flex')
                 this.$system.overlay = false
+                this.$system.popupBuy = false
             }, 450)
         }
     },

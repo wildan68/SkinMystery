@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         closeOverlay() {
-            this.$root.$emit('closeBuyPopup')
+            if (this.$system.popupBuy) this.$root.$emit('closeBuyPopup')
             this.$system.closeOverlay()
         }
     }
