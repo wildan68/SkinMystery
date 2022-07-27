@@ -1,6 +1,6 @@
 <template>
     <div class="flex gap-[4px] flex-wrap">
-        <div class="flex gap-[4px]" v-for="(d, i) in data" :key="i">
+        <div class="flex gap-[4px]" v-for="(d, i) in data" :key="i"  @click.prevent="i === 0 ? $system.to('/') : 0">
             <span :class="i < (data.length - 1) ? 'text-[#B54B0F] font-[600]' : 'text-[#404040]'">
                 {{ d.title }}
             </span>

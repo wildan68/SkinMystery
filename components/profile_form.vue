@@ -6,7 +6,7 @@
     </div>
     <div class="input_group">
         <label for="nama">Email</label>
-        <div class="flex w-full gap-[24px] flex-wrap">
+        <div class="flex w-full gap-[24px] lg:flex-nowrap flex-wrap">
             <input type="text" placeholder="Email" value="aaisyawldr@gmail.com" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">
@@ -20,7 +20,7 @@
     </div>
     <div class="input_group">
         <label for="nama">Nomor HP</label>
-        <div class="flex w-full gap-[24px] flex-wrap">
+        <div class="flex w-full gap-[24px] lg:flex-nowrap flex-wrap">
             <input type="text" placeholder="No HP" value="081234567890" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">

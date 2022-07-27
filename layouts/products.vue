@@ -58,7 +58,7 @@
             </button>
         </div>
     </div>
-    <div class="flex w-full items-center justify-center my-[24px]">
+    <div class="flex w-full items-center justify-center my-[24px] lg:mb-0 mb-[80px]">
         <button @click.prevent="loadMore" class="w-[270px] h-[48px] bg-white text-[#B54B0F] border-[#B54B0F] hover:bg-[#B54B0F] hover:text-white border rounded-[16px] px-[65px]">
             Muat Lebih Banyak
         </button> 

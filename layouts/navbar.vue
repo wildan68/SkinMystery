@@ -16,7 +16,10 @@
             </div>
         </div>
     </div>
-    <div class="header">
+    <!-- header mobile -->
+    <Header class="lg:hidden flex"/>
+    <!----->
+    <div class="header hidden lg:flex">
         <div class="flex cursor-pointer" @click.prevent="$system.to('/')">
             <img src="@/assets/png/logo.png" alt="" />
         </div>
@@ -72,6 +75,8 @@ import {
 
 import ProfileMenu from '../components/profile_menu'
 
+import Header from '../components/mobile/header'
+
 export default {
     data() {
         return {
@@ -88,6 +93,7 @@ export default {
         icNotif,
         icSubtract,
         ProfileMenu,
+        Header,
     },
     methods: {
         showProfile() {
@@ -151,7 +157,6 @@ export default {
     .header {
         background-color: #fff;
         height: 69px;
-        display: flex;
         align-items: center;
         padding: 0 56px 0 56px;
         color: #404040;

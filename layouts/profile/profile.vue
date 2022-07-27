@@ -1,5 +1,5 @@
 <template>
-    <div class="profile">
+    <div class="profile lg:mb-0 mb-[80px]">
         <LeftSection/>
         <RightSection class="flex-1"/>
     </div>

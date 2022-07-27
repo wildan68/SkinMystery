@@ -8,6 +8,7 @@
     <Populer />
     <Promo />
     <Products />
+    <MobileNavbar class="lg:hidden flex"/>
 </div>
 </template>
 
@@ -21,6 +22,10 @@ import Populer from '@/layouts/populer'
 import Promo from '@/layouts/promo'
 import Products from '@/layouts/products'
 
+// Mobile Navbar
+
+import MobileNavbar from '@/components/mobile/bot_navbar'
+
 export default {
     components: {
         Navbar,
@@ -30,6 +35,7 @@ export default {
         Populer,
         Promo,
         Products,
+        MobileNavbar,
     },
     mounted() {
 
