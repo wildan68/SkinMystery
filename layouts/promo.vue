@@ -10,8 +10,8 @@
             Lihat Semua <i class="bi bi-chevron-right"></i>
         </button>
     </div>
-    <div class="flex gap-[46px] w-full">
-        <div class="w-[395px] h-[470px] overflow-hidden rounded-[16px]">
+    <div class="flex gap-[46px] w-full lg:flex-row flex-col">
+        <div class="lg:w-[395px] w-full lg:h-[470px] h-[245px] overflow-hidden rounded-[16px]">
             <img src="/png/promo_anniversary_banner.png" class="w-full h-full object-cover" alt="" />
         </div>
         <div class="flex-1 promo_list">
@@ -67,6 +67,10 @@ export default {
     gap: 16px;
     padding: 0 104px 0 104px;
     margin-top: 40px;
+
+    @media (max-width: 1024px) {
+        padding: 0 24px 0 24px;
+    }
 
     .lihat_semua {
         flex: 1;

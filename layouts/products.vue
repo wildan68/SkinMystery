@@ -97,10 +97,18 @@ export default {
             }, ],
             kategoriSlide: {
                 slidesPerView: 6,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                    },
+                    720: {
+                        slidesPerView: 2,
+                    },
+                },
                 spaceBetween: 10,
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.products-next',
+                    prevEl: '.products-prev',
                 },
             },
             //products: [],
@@ -135,6 +143,10 @@ export default {
     padding: 0 104px 0 104px;
     margin-top: 40px;
 
+    @media (max-width: 1024px) {
+        padding: 0 24px 0 24px;
+    }
+
     .btn_navigation {
         width: 40px;
         height: 40px;
@@ -165,6 +177,11 @@ export default {
         grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
         gap: 16px;
 
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
         .products_item {
             display: flex;
             flex-direction: column;
@@ -178,6 +195,10 @@ export default {
             align-items: center;
             width: 192px;
 
+            @media (max-width: 1024px) {
+                width: 100%
+            }
+            
             .products_item_sub {
                 display: flex;
                 flex-direction: column;

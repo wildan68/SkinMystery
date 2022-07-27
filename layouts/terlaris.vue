@@ -1,8 +1,8 @@
 <template>
 <div class="terlaris">
-    <div class="flex">
+    <div class="flex lg:px-0 px-[24px]">
         <div class="flex-1">
-            <span class="font-[600] text-[24px]">
+            <span class="font-[600] text-[18px] lg:text-[24px]">
                 Perawatan Wajah Terlaris
             </span>
         </div>
@@ -11,7 +11,7 @@
         </button>
     </div>
     <!-- slide -->
-    <div class="flex relative items-center">
+    <div class="flex relative items-center lg:px-0 px-[24px]">
         <div class="swiper overflow-hidden flex relative items-center" v-swiper:mySwiper="productSlide">
             <div class="swiper-wrapper flex items-center">
                 <div class="swiper-slide" v-for="(products, i) in products" :key="i" ref="productItems">
@@ -53,12 +53,12 @@
             </div>
 
         </div>
-        <div class="absolute left-[-20px] flex justify-center items-center">
+        <div class="absolute left-0 lg:left-[-20px] flex justify-center items-center">
             <button class="btn_navigation products-prev shadow-lg">
                 <i class="bi bi-chevron-left"></i>
             </button>
         </div>
-        <div class="absolute right-[-20px] flex justify-center items-center">
+        <div class="absolute right-0 lg:right-[-20px] flex justify-center items-center">
             <button class="btn_navigation products-next shadow-lg">
                 <i class="bi bi-chevron-right"></i>
             </button>
@@ -81,6 +81,16 @@ export default {
             productSlide: {
                 slidesPerView: 6,
                 spaceBetween: 10,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 10,
+                    },
+                    720: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                },
                 navigation: {
                     nextEl: '.products-next',
                     prevEl: '.products-prev',
@@ -112,6 +122,10 @@ export default {
     flex-direction: column;
     gap: 16px;
     padding: 0 104px 0 104px;
+
+    @media (max-width: 1024px) {
+        padding: 24px 0 24px;
+    }
 
     .lihat_semua {
         flex: 1;
