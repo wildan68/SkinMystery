@@ -27,6 +27,11 @@ export default ({ app }, inject) => {
             app.router.push(path);
             this.overlay = false;
             this.profileMenu = false;
+        },
+        //close overlay
+        closeOverlay() {
+            this.overlay = false;
+            this.profileMenu = false;
         }
     }))
 }

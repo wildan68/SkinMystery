@@ -120,56 +120,60 @@
                 </div>
             </div>
         </div>
+        <div class="gradient_buy lg:hidden fixed bottom-0 pb-[10px] left-0 right-0 h-[60px] flex justify-center items-center px-[24px] z-[5]">
+            <button @click.prevent="showPopupBuy" class="bg-[#B54B0F] h-full gap-[10px] w-full text-white rounded-[14px] font-[600]">Beli</button>
+        </div>
         <div class="flex flex-col mb-[24px]">
-            <div class="border border-[#E0E0E0] rounded-[12px] p-[16px]">
-                <span class="font-[600] text-[16px] text-[#0A0A0A]">
-                    Aroma
-                </span>
+            <div class="hidden lg:flex flex-col lg:relative fixed bottom-0 left-0 right-0 z-20" ref="popupBuy">
+                <div class="border border-[#E0E0E0] bg-white rounded-[12px] p-[16px]">
+                    <span class="font-[600] text-[16px] text-[#0A0A0A]">
+                        Aroma
+                    </span>
+                    <ProductVariant :data="[{
+                    name: 'Lavender',
+                    img: '/png/variant1.png',
+                    }, {
+                    name: 'Jeruk',
+                    img: '/png/variant2.png',
+                    }, {
+                    name: 'Blackberry',
+                    img: '/png/variant3.png',
+                    }, {
+                    name: 'Vanila',
+                    img: '/png/variant4.png',
+                    }, {
+                    name: 'Kopi',
+                    img: '/png/variant5.png',
+                    }]" class="mt-[12px]" />
 
-                <ProductVariant :data="[{
-                name: 'Lavender',
-                img: '/png/variant1.png',
-                }, {
-                name: 'Jeruk',
-                img: '/png/variant2.png',
-                }, {
-                name: 'Blackberry',
-                img: '/png/variant3.png',
-                }, {
-                name: 'Vanila',
-                img: '/png/variant4.png',
-                }, {
-                name: 'Kopi',
-                img: '/png/variant5.png',
-                }]" class="mt-[12px]" />
-
-                <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
-                <span class="font-[600] text-[16px] text-[#0A0A0A]">
-                    Aroma
-                </span>
-                <ProductQuantity :maxQuantity="75" class="mt-[12px]"/>
-                <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
-                <div class="flex justify-between items-center">
-                    <div class="flex-1 text-[#616161]">
-                        Subtotal
+                    <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
+                    <span class="font-[600] text-[16px] text-[#0A0A0A]">
+                        Aroma
+                    </span>
+                    <ProductQuantity :maxQuantity="75" class="mt-[12px]" />
+                    <div class=" border-b-2 border-[#EDEDED] my-[16px]"></div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex-1 text-[#616161]">
+                            Subtotal
+                        </div>
+                        <div class="flex-1 flex flex-col text-[16px] price_text items-end">
+                            <span class="line-through price_text text-[14px] text-[#757575]">Rp289.000</span>
+                            <span>Rp<b class="text-[32px] price_text">289</b>.000</span>
+                        </div>
                     </div>
-                    <div class="flex-1 flex flex-col text-[16px] price_text items-end">
-                        <span class="line-through price_text text-[14px] text-[#757575]">Rp289.000</span>
-                        <span>Rp<b class="text-[32px] price_text">289</b>.000</span>
+                    <div class="flex flex-col gap-[8px] w-full">
+                        <button class="h-[40px] gap-[8px] bg-[#B54B0F] text-white rounded-[12px]">
+                            <ic-cart></ic-cart>
+                            Kantongin
+                        </button>
+                        <button class="h-[40px] gap-[8px] border border-[#B54B0F] text-[#B54B0F] rounded-[12px]">
+                            Beli Langsung
+                        </button>
                     </div>
-                </div>
-                <div class="flex flex-col gap-[8px] w-full">
-                    <button class="h-[40px] gap-[8px] bg-[#B54B0F] text-white rounded-[12px]">
-                        <ic-cart></ic-cart>
-                        Kantongin
-                    </button>
-                    <button class="h-[40px] gap-[8px] border border-[#B54B0F] text-[#B54B0F] rounded-[12px]">
-                        Beli Langsung
-                    </button>
                 </div>
             </div>
             <div class="mt-[24px] overflow-hidden w-full h-[101px] rounded-[8px]">
-                <img src="/png/the_body_shop.png" class="w-full h-full object-cover"/>
+                <img src="/png/the_body_shop.png" class="w-full h-full object-cover" />
             </div>
         </div>
     </div>
@@ -295,6 +299,28 @@ export default {
             this.imageListSelected.img = img
             this.imageListSelected.type = type
         },
+        showPopupBuy() {
+            this.$refs.popupBuy.classList.remove('close_buy')
+            this.$refs.popupBuy.classList.add('popup_buy')
+            this.$refs.popupBuy.classList.remove('hidden')
+            this.$refs.popupBuy.classList.add('flex')
+            this.$system.overlay = true
+        },
+
+        closeBuy() {
+            this.$refs.popupBuy.classList.remove('popup_buy')
+            this.$refs.popupBuy.classList.add('close_buy')
+            setTimeout(() => {
+                this.$refs.popupBuy.classList.add('hidden')
+                this.$refs.popupBuy.classList.remove('flex')
+                this.$system.overlay = false
+            }, 450)
+        }
+    },
+    mounted() {
+        this.$root.$on('closeBuyPopup', () => {
+            this.closeBuy()
+        })
     }
 }
 </script>
@@ -335,6 +361,39 @@ export default {
 
         &.selected {
             border: 2px solid #B54B0F;
+        }
+    }
+
+    .gradient_buy {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, 1) 65%);
+    }
+
+    .popup_buy {
+        animation: showUp 0.5s ease-in-out;
+    }
+
+    @keyframes showUp {
+        from {
+            bottom: -500px;
+        }
+
+        to {
+            bottom: 0;
+        }
+    }
+
+    .close_buy {
+        animation: showDown 0.5s ease-in-out;
+    }
+
+    @keyframes showDown {
+        from {
+            bottom: 0;
+        }
+
+        to {
+            bottom: -500px;
         }
     }
 }

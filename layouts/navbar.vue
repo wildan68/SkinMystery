@@ -120,7 +120,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 40;
 
     &.animation {
         animation: fadeIn 0.5s ease-in-out;
