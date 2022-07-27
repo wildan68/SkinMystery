@@ -8,8 +8,8 @@
             L'Oreal Paris Revitalift Crystal Micro Essence Skin Care
         </span>
     </div>
-    <div class="flex gap-[64px]">
-        <div class="flex flex-col gap-[8px] items-center">
+    <div class="flex md:gap-[64px] flex-wrap">
+        <div class="flex flex-col gap-[8px] items-center w-full md:w-auto">
             <span class="text-[64px] font-[800] text-[#0A0A0A]">
                 4.9<span class="text-[#757575] text-[16px]">/5</span>
             </span>
@@ -20,7 +20,8 @@
                 (7.229) Ulasan
             </span>
         </div>
-        <div class="flex gap-[16px] py-[14px]">
+        <!-- rating rata rata -->
+        <div class="flex gap-[16px] py-[14px] justify-center">
             <div class="flex flex-col gap-[5px] justify-between">
                 <div class="flex">
                     <ic-star v-for="i in 5" :key="i"></ic-star>
@@ -68,7 +69,7 @@
         <span class="font-[600] text-[16px]">
             Filter
         </span>
-        <div class="flex gap-[12px]">
+        <div class="flex gap-[12px] flex-wrap">
             <button @click.prevent="filterSelected = i" :class="filterSelected === i ? 'btn_filter selected' : 'btn_filter'" v-for="(filter, i) in filter" :key="i">
                 <ic-star v-if="filter.icon"></ic-star>
                 {{ filter.text }}

@@ -73,6 +73,10 @@ export default {
     padding: 16px;
     border: 1px solid #E0E0E0;
 
+    @media (max-width: 1024px) {
+        width: auto;
+    }
+
     .misteri_point {
         height: 43px;
         padding: 8px;

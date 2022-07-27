@@ -1,12 +1,12 @@
 <template>
 <div class="review_media">
-    <span class="font-[600] text-[20px]">
+    <span class="font-[600] lg:text-[20px]">
         MEDIA DARI PEMBELI
     </span>
     <div class="flex w-[85%] relative items-center">
         <div class="swiper overflow-hidden flex relative items-center" v-swiper:mySwiper="mediaSlide">
             <div class="swiper-wrapper flex items-center">
-                <div class="swiper-slide rounded-[17px] w-[117px] h-[117px] overflow-hidden" v-for="(media, i) in mediaItems" :key="i">
+                <div class="swiper-slide lg:rounded-[17px] rounded-[8px] lg:w-[117px] lg:h-[117px] w-[68px] h-[68px] overflow-hidden" v-for="(media, i) in mediaItems" :key="i">
                     <img :src="media.img" class="w-full h-full object-cover" />
                 </div>
             </div>
@@ -35,6 +35,11 @@ export default {
             mediaSlide: {
                 slidesPerView: 'auto',
                 spaceBetween: 10,
+                breakpoints: {
+                    720: {
+                        spaceBetween: 5,
+                    }
+                },
                 navigation: {
                     nextEl: '.items-next',
                     prevEl: '.items-prev',

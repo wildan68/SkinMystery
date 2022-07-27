@@ -1,18 +1,18 @@
 <template>
-<form class="px-[24px] flex flex-col gap-[16px] w-[80%]">
+<form class="px-[24px] flex flex-col gap-[16px] lg:w-[80%] w-full">
     <div class="input_group">
         <label for="nama">Nama Lengkap</label>
         <input type="text" placeholder="Nama Lengkap" value="Annas Aisya Wulandari" />
     </div>
     <div class="input_group">
         <label for="nama">Email</label>
-        <div class="flex w-full gap-[24px]">
+        <div class="flex w-full gap-[24px] flex-wrap">
             <input type="text" placeholder="Email" value="aaisyawldr@gmail.com" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">
                     Terverifikasi
                 </span>
-                <button class="font-[600] text-[16px] text-[#B54B0F]">
+                <button class="font-[600] lg:text-[16px] text-[#B54B0F]">
                     Ubah
                 </button>
             </div>
@@ -20,13 +20,13 @@
     </div>
     <div class="input_group">
         <label for="nama">Nomor HP</label>
-        <div class="flex w-full gap-[24px]">
+        <div class="flex w-full gap-[24px] flex-wrap">
             <input type="text" placeholder="No HP" value="081234567890" />
             <div class="flex gap-[24px] items-center">
                 <span class="py-[8px] px-[10px] text-[#4DA934] bg-[#EDF6EB] rounded-[8px] text-[12px]">
                     Terverifikasi
                 </span>
-                <button class="font-[600] text-[16px] text-[#B54B0F]">
+                <button class="font-[600] lg:text-[16px] text-[#B54B0F]">
                     Ubah
                 </button>
             </div>
@@ -36,7 +36,7 @@
         <label for="nama">Jenis Kelamin</label>
         <div class="flex gap-[24px] w-full h-[56px]">
             <div class="flex items-center gap-[8px]">
-                <input type="radio" name="jenis_kelamin" value="laki-laki" checked/>
+                <input type="radio" name="jenis_kelamin" value="laki-laki" checked />
                 <span class="text-[#757575]">Laki-laki</span>
             </div>
             <div class="flex items-center gap-[8px]">
@@ -160,8 +160,16 @@ export default {
     gap: 8px;
     align-items: center;
 
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+
     label {
         width: 200px;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
     }
 
     input[type=text] {

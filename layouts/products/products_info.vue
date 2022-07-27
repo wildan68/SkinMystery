@@ -2,8 +2,8 @@
 <div class="products_info">
     <Breadcrumbs :data="breadcrumbs" />
 
-    <div class="flex mt-[24px] gap-[56px] justify-center">
-        <div class="flex-1 flex flex-col gap-[23px] items-end">
+    <div class="flex mt-[24px] gap-[56px] justify-center lg:flex-row flex-col">
+        <div class="flex-1 flex flex-col gap-[23px] items-end items-center">
             <div class="w-[348px] h-[348px] overflow-hidden rounded-[8px] relative">
                 <zoom-on-hover :img-normal="imageListSelected.img" class="w-full h-full object-cover cursor-crosshair" :scale="2.5"></zoom-on-hover>
                 <div class="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center" v-if="imageListSelected.type === 'video'">
@@ -37,7 +37,7 @@
             <span class="text-[18px] font-[600]">
                 L'Oreal Paris Revitalift Crystal Micro Essence Skin Care
             </span>
-            <div class="flex gap-[8px] w-full">
+            <div class="flex gap-[8px] w-full flex-wrap items-center">
                 <div class="font-[600] text-[16px] flex gap-[8px] items-center">
                     4.8 <rating :rating="parseFloat(4.5)" :increment="0.5" :max-rating="5" :read-only="true" :star-size="24" :show-rating="false" active-color="#FF8B33"></rating>
                 </div>
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col mb-[24px]">
             <div class="border border-[#E0E0E0] rounded-[12px] p-[16px]">
                 <span class="font-[600] text-[16px] text-[#0A0A0A]">
                     Aroma
@@ -306,6 +306,10 @@ export default {
     gap: 16px;
     padding: 0 104px 0 104px;
     margin-top: 24px;
+
+    @media (max-width: 1024px) {
+        padding: 0 24px 0 24px;
+    }
 
     .btn_navigation {
         width: 32px;

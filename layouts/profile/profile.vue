@@ -22,5 +22,10 @@ export default {
     padding: 40px 104px 40px 104px;
     display: flex;
     gap: 24px;
+
+    @media (max-width: 1024px) {
+        padding: 0px 24px 0px 24px;
+        flex-direction: column-reverse;
+    } 
 }
 </style>

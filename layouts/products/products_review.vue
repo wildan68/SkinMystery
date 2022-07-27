@@ -77,6 +77,11 @@ export default {
     padding: 0 104px 0 104px;
     width: 80%;
 
+    @media (max-width: 1024px) {
+        padding: 0 24px 0 24px;
+        width: auto;
+    }
+
     .btn_page {
         width: 46px;
         height: 46px;
